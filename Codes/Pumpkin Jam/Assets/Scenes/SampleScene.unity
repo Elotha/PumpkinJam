@@ -821,6 +821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 700
   playerTransform: {fileID: 1335125088}
+  lookingPermission: 1
 --- !u!1 &982837090 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3378303742794100267, guid: c7430005765274049ada6248b7454d58, type: 3}
@@ -1064,6 +1065,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 512
+  movementPermission: 1
 --- !u!114 &1335125090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1164,7 +1166,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814617303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.927, z: 0}
+  m_LocalPosition: {x: 0, y: -0.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1335125088}

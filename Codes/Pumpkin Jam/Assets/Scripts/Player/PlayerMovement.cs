@@ -24,7 +24,7 @@ namespace Player
             _groundChecker = transform.Find("GroundChecker");
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             HorizontalMovement();
             VerticalMovement();
@@ -37,12 +37,12 @@ namespace Player
             var jump = movementPermission && Input.GetKeyDown(KeyCode.Space);
             
             if (!_isGrounded) {
-                _velocity.y += gravity * Time.deltaTime;
+                _velocity.y += 2 * gravity * Time.deltaTime;
             }
 
             else {
                 if (jump) {
-                    _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+                    _velocity.y = Mathf.Sqrt(jumpHeight * -1f * gravity);
                     _isGrounded = false;
                 }
                 else if (_velocity.y < 0f) {
