@@ -6,7 +6,7 @@ namespace Core
 {
     public static class LevelManager
     {
-        public static int CurrentSceneIndex { get; private set; } = 1;
+        public static int CurrentSceneIndex { get; private set; } = 0;
 
         public delegate void OnResetHandler();
 
