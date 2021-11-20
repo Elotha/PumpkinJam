@@ -10,7 +10,9 @@ namespace Player
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float groundDistance;
         [SerializeField] private LayerMask groundMask;
-
+        
+        public bool movementPermission = true;
+        
         private CharacterController _controller;
         private Vector3 _velocity;
         private Transform _groundChecker;
@@ -31,7 +33,8 @@ namespace Player
         private void VerticalMovement()
         {
             _isGrounded = Physics.CheckSphere(_groundChecker.position, groundDistance, groundMask);
-            var jump = Input.GetKeyDown(KeyCode.Space);
+
+            var jump = movementPermission && Input.GetKeyDown(KeyCode.Space);
             
             if (!_isGrounded) {
                 _velocity.y += gravity * Time.deltaTime;
@@ -51,6 +54,8 @@ namespace Player
 
         private void HorizontalMovement()
         {
+            if (!movementPermission) return;
+            
             var x = Input.GetAxis("Horizontal");
             var z = Input.GetAxis("Vertical");
 

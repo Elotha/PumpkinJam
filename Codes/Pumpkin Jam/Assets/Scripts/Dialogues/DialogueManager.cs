@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Core;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Dialogues
 {
@@ -15,6 +15,7 @@ namespace Dialogues
             set {
                 _currentString = value;
                 dialogueShown.text = _currentString;
+                dialogueBackground.enabled = (value != "");
             }
         }
         private string _targetString = "";
@@ -27,9 +28,12 @@ namespace Dialogues
         [Header("General")]
         [SerializeField] private float newCharacterTime;
         [SerializeField] private float maximumShowTime;
-        [SerializeField] private TextMeshProUGUI dialogueShown;
         [SerializeField] private Dialogue currentDialogue;
         public List<string> choicesMade = new List<string>();
+
+        [Header("UI")]
+        [SerializeField] private TextMeshProUGUI dialogueShown;
+        [SerializeField] private Image dialogueBackground;
         
         [Header("Debug")]
         public bool showTriggers;
@@ -93,7 +97,7 @@ namespace Dialogues
         private IEnumerator AdvanceText()
         {
             // Text appears gradually
-            _characterNo = 0;
+            _characterNo = 1;
             while (CurrentString != _targetString) {
                 CurrentString = _targetString.Substring(0, _characterNo++);
                 yield return new WaitForSeconds(newCharacterTime);

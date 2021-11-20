@@ -7,6 +7,7 @@ namespace Player
         [SerializeField] private float mouseSensitivity = 100f;
         
         public Transform playerTransform;
+        public bool lookingPermission = true;
 
         private float _xRotation;
 
