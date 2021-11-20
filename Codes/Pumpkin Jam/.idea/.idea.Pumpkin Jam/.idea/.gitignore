@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Pumpkin Jam.iml
+/modules.xml
+# Datasource local storage ignored files
+/../../../../../../../../:\Oyun Yapımı\Regular Duck Games\Game Jam\Pumpkin Jam\.idea\.idea.Pumpkin Jam\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
