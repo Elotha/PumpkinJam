@@ -42,8 +42,8 @@ namespace Core
             if (!isDebugMode) return;
 
             // Bölümü yeniden başlat
-            if (Input.GetKeyDown(restartLevelKey) 
-                || Input.GetMouseButtonDown(2))
+            if (Input.GetKeyDown(restartLevelKey))
+                // || Input.GetMouseButtonDown(2))
             {
                 LevelManager.ResetLevel();
             }
