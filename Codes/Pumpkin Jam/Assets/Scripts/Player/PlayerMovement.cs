@@ -6,7 +6,7 @@ namespace Player
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float moveSpeed;
-        [SerializeField] private float jumpHeight = 3f;
+        [SerializeField] private float jumpHeight = 1f;
         [SerializeField] private float gravity = -9.81f;
         [SerializeField] private float groundDistance;
         [SerializeField] private LayerMask groundMask;
@@ -16,7 +16,7 @@ namespace Player
         private CharacterController _controller;
         private Vector3 _velocity;
         private Transform _groundChecker;
-        private bool _isGrounded;
+        public bool _isGrounded;
 
         private void Start()
         {
@@ -24,7 +24,7 @@ namespace Player
             _groundChecker = transform.Find("GroundChecker");
         }
 
-        private void FixedUpdate()
+        private void Update()
         {
             HorizontalMovement();
             VerticalMovement();
@@ -37,12 +37,12 @@ namespace Player
             var jump = movementPermission && Input.GetKeyDown(KeyCode.Space);
             
             if (!_isGrounded) {
-                _velocity.y += 2 * gravity * Time.deltaTime;
+                _velocity.y += gravity * Time.deltaTime;
             }
 
             else {
                 if (jump) {
-                    _velocity.y = Mathf.Sqrt(jumpHeight * -1f * gravity);
+                    _velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
                     _isGrounded = false;
                 }
                 else if (_velocity.y < 0f) {
