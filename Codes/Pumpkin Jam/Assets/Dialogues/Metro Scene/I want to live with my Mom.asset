@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddf769fb40a4306907bc11ecb14640d, type: 3}
+  m_Name: I want to live with my Mom
+  m_EditorClassIdentifier: 
+  name: I want to live with my mom
+  isBranching: 0
+  dialogue:
+  - Are you sure? I mean your dad has very little time left to live...
+  - Wait... I forgot... You shouldn't have known that...
+  - ...
+  - Let's forget what I said...
+  - It was a joke...
+  choices: []
+  parallelChoice: {fileID: 0}
