@@ -1477,6 +1477,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 418300903}
+  - component: {fileID: 418300904}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1502,9 +1503,18 @@ Transform:
   - {fileID: 1172291583}
   - {fileID: 636707095}
   - {fileID: 1651399592}
+  - {fileID: 2046204076}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &418300904
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418300902}
+  m_Enabled: 1
 --- !u!1 &424140931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5274,6 +5284,50 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &2046204075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2046204076}
+  - component: {fileID: 2046204077}
+  m_Layer: 0
+  m_Name: Anons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2046204076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046204075}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 2.2989542, y: 3.1929684, z: 17.646399}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 418300903}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2046204077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046204075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a66e5b650e4d844807288bee4ac5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anons: {fileID: 8300000, guid: a19fea7f6f2a6d24296bf4abce38ff4c, type: 3}
 --- !u!1 &2062811137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3378303742794100267, guid: c7430005765274049ada6248b7454d58, type: 3}
