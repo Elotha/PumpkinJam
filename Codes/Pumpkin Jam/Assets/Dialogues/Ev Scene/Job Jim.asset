@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddf769fb40a4306907bc11ecb14640d, type: 3}
+  m_Name: Job Jim
+  m_EditorClassIdentifier: 
+  name: New Name
+  isBranching: 0
+  dialogue:
+  - It's now time to grow up a bit! You started your first job!
+  - You must be angry that Jim from work is lying to your boss about you.
+  - Are you gonna do something? Or are you gonna chicken out and stay silent?
+  choices: []
+  parallelChoice: {fileID: 0}
