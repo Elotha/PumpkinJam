@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3378303742794100279}
   - component: {fileID: 3378303742794100278}
   - component: {fileID: 3378303742794100277}
-  - component: {fileID: 3378303742794100276}
   - component: {fileID: 6271830328336126743}
+  - component: {fileID: 3655497630005026447}
   m_Layer: 10
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3378303742794100267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.04, y: 1.009, z: -6.253}
-  m_LocalScale: {x: 0.5, y: 0.74, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3378303742794100267}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3378303742794100277
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3378303742794100276
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378303742794100267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2.45
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!114 &6271830328336126743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,3 +96,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerNo: 0
+  killTriggers: []
+--- !u!65 &3655497630005026447
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378303742794100267}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.00000011920929, z: 0}
