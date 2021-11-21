@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 002
   dialogue:
-  - This dialogue consists of only one part. Would that be a problem? No, of course,
-    why would it?
+  - This is the second dialogue part 1!
+  - This is the second dialogue part 2!
   choices:
   - {fileID: 11400000, guid: f6d19cd68b6bbda4f9b2f2ff322f6665, type: 2}
   - {fileID: 11400000, guid: 30860184de3447d4a8c58c39a88190a2, type: 2}
+  parallelChoice: {fileID: 0}

@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 003
   dialogue:
-  - Sometimes there is only one choice in this life.
+  - This is the third dialogue part 1!
+  - This is the third dialogue part 2!
+  - This is the third dialogue part 3!
   choices:
   - {fileID: 11400000, guid: 30860184de3447d4a8c58c39a88190a2, type: 2}
+  parallelChoice: {fileID: 0}

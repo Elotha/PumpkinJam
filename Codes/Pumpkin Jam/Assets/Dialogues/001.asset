@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 001
   dialogue:
-  - This is the start of the game.
-  - And this is the second part of the first dialogue.
-  - Yes, you guessed it, this is the third part of the first dialogue! You won!!
+  - This is the first dialogue!
   choices:
   - {fileID: 11400000, guid: 0c3744fc3fc5a3d4c8f4e97db109f05b, type: 2}
   - {fileID: 11400000, guid: f6d19cd68b6bbda4f9b2f2ff322f6665, type: 2}
+  - {fileID: 11400000, guid: 30860184de3447d4a8c58c39a88190a2, type: 2}
+  parallelChoice: {fileID: 0}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 004
   dialogue:
-  - Hey, this is a two parts dialogue!
-  - And you are reading the second part of it!
+  - This is the fourth dialogue part 1!
+  - This is the fourth dialogue part 2!
   choices: []
+  parallelChoice: {fileID: 0}

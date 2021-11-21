@@ -33,7 +33,7 @@ namespace Dialogues
         public List<string> choicesMade = new List<string>();
 
         public delegate void OnDialogueFinish();
-        public static event OnDialogueFinish onDialogueFinish;
+        public static event OnDialogueFinish OnDialogueFinishEvent;
 
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI dialogueShown;
@@ -94,14 +94,14 @@ namespace Dialogues
 
         public void NewDialogue(int number)
         {
-            if (number > currentDialogue.choices.Count - 1) {
+            if (number > _nextChoices.Count - 1) {
                 Debug.LogError("Trigger number exceeded the choices count!");
                 return;
             }
             
             // Player chose a path, update the dialogue
-            choicesMade.Add(currentDialogue.choices[number].name);
-            currentDialogue = currentDialogue.choices[number];
+            choicesMade.Add(_nextChoices[number].name);
+            currentDialogue = _nextChoices[number];
             if (currentDialogue.choices.Count != 0) {
                 _nextChoices = currentDialogue.choices;
             }
@@ -118,9 +118,9 @@ namespace Dialogues
         {
             CurrentString = "";
             _targetString = "";
-            if (onDialogueFinish != null) {
-                onDialogueFinish();
-                onDialogueFinish = null;
+            if (OnDialogueFinishEvent != null) {
+                OnDialogueFinishEvent();
+                OnDialogueFinishEvent = null;
             }
         }
     }

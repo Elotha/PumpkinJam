@@ -1,8 +1,6 @@
-﻿using System;
-using Core.Interfaces;
+﻿using Core.Interfaces;
 using Dialogues;
 using Player;
-using UnityEngine;
 
 namespace Objects
 {
@@ -12,7 +10,7 @@ namespace Objects
         public override void Interact()
         {
             PlayerMovement.I.movementPermission = false;
-            DialogueManager.onDialogueFinish += GivePermission;
+            DialogueManager.OnDialogueFinishEvent += GivePermission;
             base.Interact();
         }
 
