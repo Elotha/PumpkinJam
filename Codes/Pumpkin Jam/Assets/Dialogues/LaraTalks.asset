@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddf769fb40a4306907bc11ecb14640d, type: 3}
+  m_Name: LaraTalks
+  m_EditorClassIdentifier: 
+  name: 001
+  dialogue:
+  - Lara talks to the player via phone.
+  - Lara talks to the player via phone.
+  - Lara talks to the player via phone.
+  - Lara don't stop talking.
+  choices:
+  - {fileID: 11400000, guid: 0c3744fc3fc5a3d4c8f4e97db109f05b, type: 2}
+  - {fileID: 11400000, guid: f6d19cd68b6bbda4f9b2f2ff322f6665, type: 2}
+  - {fileID: 11400000, guid: 30860184de3447d4a8c58c39a88190a2, type: 2}
+  - {fileID: 11400000, guid: e8f909303c90b954ca5e04601951dd86, type: 2}
+  - {fileID: 11400000, guid: fd71ec81a6b271847a2d5244f23dc959, type: 2}
+  parallelChoice: {fileID: 0}

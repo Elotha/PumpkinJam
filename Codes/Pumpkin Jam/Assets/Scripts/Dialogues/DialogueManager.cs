@@ -16,7 +16,7 @@ namespace Dialogues
             set {
                 _currentString = value;
                 dialogueShown.text = _currentString;
-                dialogueBackground.enabled = (value != "");
+                dialogueBackground.enabled = (_currentString != "");
             }
         }
         private string _targetString = "";
@@ -31,6 +31,7 @@ namespace Dialogues
         [SerializeField] private float maximumShowTime;
         [SerializeField] private Dialogue currentDialogue;
         public List<string> choicesMade = new List<string>();
+        public List<string> paralelChoices = new List<string>();
 
         public delegate void OnDialogueFinish();
         public static event OnDialogueFinish OnDialogueFinishEvent;
@@ -41,15 +42,6 @@ namespace Dialogues
         
         [Header("Debug")]
         public bool showTriggers;
-        
-        
-        private void Start()
-        {
-            _targetString = currentDialogue.dialogue[0];
-            _nextChoices = currentDialogue.choices;
-            _textCoroutine = StartCoroutine(AdvanceText());
-        }
-
         private void Update()
         {
             HandleInput();
@@ -68,7 +60,7 @@ namespace Dialogues
                         _textCoroutine = StartCoroutine(AdvanceText());
                     }
                     else {
-                        StopCoroutine(_textCoroutine);
+                        if (_textCoroutine != null) StopCoroutine(_textCoroutine);
                         DialogueFinish();
                     }
                 }
@@ -92,6 +84,13 @@ namespace Dialogues
             }
         }
 
+        public void FirstDialogue()
+        {
+            _targetString = currentDialogue.dialogue[0];
+            _nextChoices = currentDialogue.choices;
+            _textCoroutine = StartCoroutine(AdvanceText());
+        }
+
         public void NewDialogue(int number)
         {
             if (number > _nextChoices.Count - 1) {
@@ -101,6 +100,10 @@ namespace Dialogues
             
             // Player chose a path, update the dialogue
             choicesMade.Add(_nextChoices[number].name);
+            if (_nextChoices[number].parallelChoice != null) {
+                paralelChoices.Add(_nextChoices[number].parallelChoice.name);
+            }
+            
             currentDialogue = _nextChoices[number];
             if (currentDialogue.choices.Count != 0) {
                 _nextChoices = currentDialogue.choices;
