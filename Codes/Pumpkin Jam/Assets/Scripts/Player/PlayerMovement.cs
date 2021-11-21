@@ -13,8 +13,10 @@ namespace Player
         [SerializeField] private LayerMask groundMask;
         
         public bool movementPermission = true;
+        public bool isWalk = false;
         public static Vector3 startPoint;
         public static Quaternion startRotation;
+        public AudioSource walk;
         
         private CharacterController _controller;
         private Vector3 _velocity;
@@ -34,6 +36,7 @@ namespace Player
         {
             HorizontalMovement();
             VerticalMovement();
+            playClip();
         }
 
         private void VerticalMovement()
@@ -60,7 +63,10 @@ namespace Player
 
         private void HorizontalMovement()
         {
-            if (!movementPermission) return;
+            if (!movementPermission)
+            {           
+                return;
+            }
             
             var x = Input.GetAxis("Horizontal");
             var z = Input.GetAxis("Vertical");
@@ -68,6 +74,26 @@ namespace Player
             var playerTransform = transform;
             var move = playerTransform.right * x + playerTransform.forward * z;
             _controller.Move(move * (moveSpeed * Time.deltaTime));
+
+            if( x == 0 && z == 0)
+            {
+                isWalk = false;
+            }
+            else
+            {
+                isWalk = true;
+            }
+        }
+        private void playClip()
+        {
+            if (isWalk && !walk.isPlaying)
+            {
+                walk.Play();
+            }
+            else
+            {
+                walk.Pause();
+            }
         }
     }
 }
