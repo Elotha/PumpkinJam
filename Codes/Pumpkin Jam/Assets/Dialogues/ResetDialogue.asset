@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ddf769fb40a4306907bc11ecb14640d, type: 3}
+  m_Name: ResetDialogue
+  m_EditorClassIdentifier: 
+  name: New Name
+  isBranching: 1
+  dialogue:
+  - So you really thought you could only hear me from a mere phone?
+  - Sometimes I wonder if you think too little of my powers.
+  - I made this game you know.
+  - "It\u2019s okay though, I forgive you."
+  - Focusing back on your small journey,
+  - ...
+  - You got to say something about this subway scene though! I even gave you the
+    option to talk back!
+  choices:
+  - {fileID: 11400000, guid: 9b640c2889ceb0e4582916460635f561, type: 2}
+  - {fileID: 11400000, guid: fd71ec81a6b271847a2d5244f23dc959, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  parallelChoice: {fileID: 0}

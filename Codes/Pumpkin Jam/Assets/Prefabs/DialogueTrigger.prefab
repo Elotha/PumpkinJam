@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3378303742794100279}
   - component: {fileID: 3378303742794100278}
   - component: {fileID: 3378303742794100277}
-  - component: {fileID: 6271830328336126743}
   - component: {fileID: 3655497630005026447}
+  - component: {fileID: 7016067333877974533}
   m_Layer: 10
   m_Name: DialogueTrigger
   m_TagString: Untagged
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3378303742794100267}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.04, y: 1.009, z: -6.253}
-  m_LocalScale: {x: 1, y: 1, z: 0.2}
+  m_LocalScale: {x: 6.5, y: 1.45, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6271830328336126743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3378303742794100267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c26a277ad5c94926924d2a867697229d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerNo: 0
-  killTriggers: []
 --- !u!65 &3655497630005026447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -110,3 +96,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: -0.00000011920929, z: 0}
+--- !u!114 &7016067333877974533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378303742794100267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ea2a0f9203642a8ba0e4f3313ad7fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerNo: 3
+  killTriggers:
+  - {fileID: 0}
+  nextDialogueTrigger: {fileID: 0}

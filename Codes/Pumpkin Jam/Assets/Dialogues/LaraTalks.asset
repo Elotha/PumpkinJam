@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: LaraTalks
   m_EditorClassIdentifier: 
   name: 001
+  isBranching: 1
   dialogue:
-  - Lara talks to the player via phone.
-  - Lara talks to the player via phone.
-  - Lara talks to the player via phone.
-  - Lara don't stop talking.
+  - Hey there!
+  - How did you find the subway station? Is it to your tastes? Oh nevermind. Not
+    like you can answer me anyways.
+  - You are probably wondering why you are here.. In the middle of a subway.
+  - "I don\u2019t know! That\u2019s on you to think and figure it out."
+  - Not everything is supposed to have a meaning. Not every game is going to hold
+    your hand and guide you too, you know!
+  - Okay, enough chit chat. You are still a baby in here, you just learned how to
+    walk! What is your first word in this new life?
   choices:
   - {fileID: 11400000, guid: 0c3744fc3fc5a3d4c8f4e97db109f05b, type: 2}
   - {fileID: 11400000, guid: f6d19cd68b6bbda4f9b2f2ff322f6665, type: 2}
   - {fileID: 11400000, guid: 30860184de3447d4a8c58c39a88190a2, type: 2}
-  - {fileID: 11400000, guid: e8f909303c90b954ca5e04601951dd86, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: fd71ec81a6b271847a2d5244f23dc959, type: 2}
   parallelChoice: {fileID: 0}

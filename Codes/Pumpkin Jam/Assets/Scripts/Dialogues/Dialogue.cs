@@ -7,6 +7,7 @@ namespace Dialogues
     public class Dialogue : ScriptableObject
     {
         public new string name = "New Name";
+        public bool isBranching;
         public string[] dialogue;
         public List<Dialogue> choices = new List<Dialogue>();
         public Dialogue parallelChoice;

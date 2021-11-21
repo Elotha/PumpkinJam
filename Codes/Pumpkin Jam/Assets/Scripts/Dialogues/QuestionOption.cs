@@ -5,10 +5,10 @@ namespace Dialogues
 {
     public class QuestionOption : Interactable
     {
-        [SerializeField] private int triggerNo;
+        [SerializeField] private Dialogue dialogue;
         public override void Interact()
         {
-            DialogueManager.I.NewDialogue(triggerNo);
+            DialogueManager.I.NewDialogue(dialogue);
             gameObject.layer = LayerMask.NameToLayer("Default");
             DialogueManager.OnDialogueFinishEvent += ActivateLayer;
             base.Interact();

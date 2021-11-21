@@ -29,6 +29,7 @@ namespace Dialogues
         [Header("General")]
         [SerializeField] private float newCharacterTime;
         [SerializeField] private float maximumShowTime;
+        [SerializeField] private Dialogue currentBranchDialogue;
         [SerializeField] private Dialogue currentDialogue;
         public List<string> choicesMade = new List<string>();
         public List<string> paralelChoices = new List<string>();
@@ -76,22 +77,24 @@ namespace Dialogues
                 yield return new WaitForSeconds(newCharacterTime);
             }
             
-            // If this is the last part of the dialogue, make it disappear 
-            // after a while
-            if (_dialoguePartNo == currentDialogue.dialogue.Length - 1) {
-                yield return new WaitForSeconds(maximumShowTime);
-                DialogueFinish();
+            if (currentDialogue == currentBranchDialogue) {
+                // If this is the last part of the dialogue, make it disappear 
+                // after a while
+                if (_dialoguePartNo == currentBranchDialogue.dialogue.Length - 1) {
+                    yield return new WaitForSeconds(maximumShowTime);
+                    DialogueFinish();
+                }
             }
         }
 
         public void FirstDialogue()
         {
-            _targetString = currentDialogue.dialogue[0];
-            _nextChoices = currentDialogue.choices;
+            _targetString = currentBranchDialogue.dialogue[0];
+            _nextChoices = currentBranchDialogue.choices;
             _textCoroutine = StartCoroutine(AdvanceText());
         }
 
-        public void NewDialogue(int number)
+        public void NewBranchDialogue(int number)
         {
             if (number > _nextChoices.Count - 1) {
                 Debug.LogError("Trigger number exceeded the choices count!");
@@ -104,11 +107,22 @@ namespace Dialogues
                 paralelChoices.Add(_nextChoices[number].parallelChoice.name);
             }
             
-            currentDialogue = _nextChoices[number];
-            if (currentDialogue.choices.Count != 0) {
-                _nextChoices = currentDialogue.choices;
+            currentBranchDialogue = _nextChoices[number];
+            if (currentBranchDialogue.choices.Count != 0) {
+                _nextChoices = currentBranchDialogue.choices;
             }
             
+            CurrentString = "";
+            _targetString = currentBranchDialogue.dialogue[0];
+            _dialoguePartNo = 0;
+            
+            StopCoroutine(_textCoroutine);
+            _textCoroutine = StartCoroutine(AdvanceText());
+        }
+        
+        public void NewDialogue(Dialogue newDialogue)
+        {
+            currentDialogue = newDialogue;
             CurrentString = "";
             _targetString = currentDialogue.dialogue[0];
             _dialoguePartNo = 0;

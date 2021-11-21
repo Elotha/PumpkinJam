@@ -8,7 +8,7 @@ namespace Dialogues
         [SerializeField] private int triggerNo;
         public override void Interact()
         {
-            DialogueManager.I.NewDialogue(triggerNo);
+            DialogueManager.I.NewBranchDialogue(triggerNo);
             base.Interact();
         }
     }

@@ -1,23 +1,35 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Dialogues
 {
     public class DialogueTrigger : MonoBehaviour
     {
-        public int triggerNo;
-        [SerializeField] private GameObject[] killTriggers;
+        public Dialogue dialogue;
+        [FormerlySerializedAs("killTriggers")] 
+        [SerializeField] private GameObject[] toBeDeactivated;
+        [SerializeField] private GameObject[] toBeActivated;
 
         private void Start()
         {
             GetComponent<Renderer>().enabled = DialogueManager.I.showTriggers;
         }
 
-        public void KillTriggers()
+        public virtual void Interact()
         {
-            foreach (var t in killTriggers) {
-                Destroy(t);
+            DialogueManager.I.NewDialogue(dialogue);
+            DialogueManager.OnDialogueFinishEvent += AdjustTriggers;
+        }
+
+        private void AdjustTriggers()
+        {
+            foreach (var t in toBeDeactivated) {
+                t.SetActive(false);
             }
-            Destroy(gameObject);
+            foreach (var t in toBeActivated) {
+                t.SetActive(true);
+            }
+            gameObject.SetActive(false);
         }
         
     }

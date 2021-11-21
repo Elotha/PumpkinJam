@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Mom
   m_EditorClassIdentifier: 
   name: 003
+  isBranching: 0
   dialogue:
-  - Mommy mommy mommy part 1!
-  - Mommy mommy mommy part 2!
-  - Mommy mommy mommy part 3!
+  - Think once again.
   choices: []
   parallelChoice: {fileID: 0}

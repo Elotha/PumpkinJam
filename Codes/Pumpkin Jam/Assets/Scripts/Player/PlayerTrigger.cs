@@ -12,11 +12,7 @@ namespace Player
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("DialogueTrigger")) {
                 var triggerScript = other.GetComponent<DialogueTrigger>();
-                var triggerNo = triggerScript.triggerNo;
-                triggerScript.KillTriggers();
-                
-                Debug.Log($"{triggerNo} is triggered!");
-                DialogueManager.I.NewDialogue(triggerNo);
+                triggerScript.Interact();
             }
         }
     }

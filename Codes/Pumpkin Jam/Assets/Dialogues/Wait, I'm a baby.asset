@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Wait, I'm a baby
   m_EditorClassIdentifier: 
   name: 002
+  isBranching: 0
   dialogue:
-  - This is the second dialogue part 1!
-  - This is the second dialogue part 2!
+  - Yes, didn't you open your eyes in this place a moment ago? You still needed a
+    tutorial to walk.
+  - ' Who needs a tutorial for walking? Not me. Only babies.'
   choices: []
   parallelChoice: {fileID: 0}

@@ -10,10 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ddf769fb40a4306907bc11ecb14640d, type: 3}
-  m_Name: ChooseMom
+  m_Name: Best Subway
   m_EditorClassIdentifier: 
-  name: 004
+  name: New Name
+  isBranching: 0
   dialogue:
-  - You chose your Mom.
+  - I know right. So cool for you to agree.
+  - Anyways...
+  - I have sad news for you...
+  - "Your parents decided to break up... And you have to decide which one you\u2019re
+    going to live with at such a young age..."
   choices: []
   parallelChoice: {fileID: 0}

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections;
+using Core.ToolBox;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Other
 {
-    public class BlackScreenEffect : MonoBehaviour
+    public class BlackScreenEffect : Singleton<BlackScreenEffect>
     {
         [SerializeField] private Image blackScreen;
         [SerializeField] private float fadeInTime = 3f;
@@ -42,6 +43,16 @@ namespace Other
             action();
             yield return new WaitForSeconds(black /2f);
             yield return StartCoroutine(ChangeColor(false, fadeOut));
+        }
+
+        public IEnumerator BlackScreenReset(Action action1, Action action2)
+        {
+            yield return StartCoroutine(ChangeColor(true, fadeInTime));
+            yield return new WaitForSeconds(blackTime /2f);
+            action1();
+            yield return new WaitForSeconds(blackTime /2f);
+            yield return StartCoroutine(ChangeColor(false, fadeOutTime));
+            action2();
         }
 
         private IEnumerator ChangeColor(bool positive, float totalTime)

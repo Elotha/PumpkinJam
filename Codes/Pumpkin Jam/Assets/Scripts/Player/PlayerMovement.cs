@@ -13,6 +13,8 @@ namespace Player
         [SerializeField] private LayerMask groundMask;
         
         public bool movementPermission = true;
+        public static Vector3 startPoint;
+        public static Quaternion startRotation;
         
         private CharacterController _controller;
         private Vector3 _velocity;
@@ -21,6 +23,9 @@ namespace Player
 
         private void Start()
         {
+            var transform1 = transform;
+            startPoint = transform1.position;
+            startRotation = transform1.localRotation;
             _controller = GetComponent<CharacterController>();
             _groundChecker = transform.Find("GroundChecker");
         }

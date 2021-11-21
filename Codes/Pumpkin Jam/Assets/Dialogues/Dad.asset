@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Dad
   m_EditorClassIdentifier: 
   name: 004
+  isBranching: 0
   dialogue:
-  - Daddy daddy daddy part 1!
-  - Daddy daddy daddy part 2!
+  - Are you sure?
   choices: []
   parallelChoice: {fileID: 0}
