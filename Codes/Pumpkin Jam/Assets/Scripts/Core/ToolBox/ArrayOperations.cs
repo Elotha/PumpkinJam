@@ -1,7 +1,7 @@
 ﻿using System;
 using Random = UnityEngine.Random;
 
-namespace Shadowself.Core.ToolBox
+namespace Core.ToolBox
 {
     public static class ArrayOperations
     {

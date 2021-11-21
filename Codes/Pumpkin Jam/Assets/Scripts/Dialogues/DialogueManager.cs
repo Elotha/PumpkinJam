@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Core;
+using Core.ToolBox;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,9 @@ namespace Dialogues
         [SerializeField] private Dialogue currentDialogue;
         public List<string> choicesMade = new List<string>();
 
+        public delegate void OnDialogueFinish();
+        public static event OnDialogueFinish onDialogueFinish;
+
         [Header("UI")]
         [SerializeField] private TextMeshProUGUI dialogueShown;
         [SerializeField] private Image dialogueBackground;
@@ -49,8 +53,6 @@ namespace Dialogues
         private void Update()
         {
             HandleInput();
-
-            // TemporaryTriggers();
         }
 
         private void HandleInput()
@@ -66,30 +68,9 @@ namespace Dialogues
                         _textCoroutine = StartCoroutine(AdvanceText());
                     }
                     else {
-                        CurrentString = "";
-                        _targetString = "";
+                        StopCoroutine(_textCoroutine);
+                        DialogueFinish();
                     }
-                }
-            }
-        }
-
-        private void TemporaryTriggers()
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1)) {
-                if (currentDialogue.choices.Count > 0) {
-                    NewDialogue(0);
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2)) {
-                if (currentDialogue.choices.Count > 1) {
-                    NewDialogue(1);
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3)) {
-                if (currentDialogue.choices.Count > 2) {
-                    NewDialogue(2);
                 }
             }
         }
@@ -107,8 +88,7 @@ namespace Dialogues
             // after a while
             if (_dialoguePartNo == currentDialogue.dialogue.Length - 1) {
                 yield return new WaitForSeconds(maximumShowTime);
-                CurrentString = "";
-                _targetString = "";
+                DialogueFinish();
             }
         }
 
@@ -122,7 +102,9 @@ namespace Dialogues
             // Player chose a path, update the dialogue
             choicesMade.Add(currentDialogue.choices[number].name);
             currentDialogue = currentDialogue.choices[number];
-            _nextChoices = currentDialogue.choices;
+            if (currentDialogue.choices.Count != 0) {
+                _nextChoices = currentDialogue.choices;
+            }
             
             CurrentString = "";
             _targetString = currentDialogue.dialogue[0];
@@ -130,6 +112,16 @@ namespace Dialogues
             
             StopCoroutine(_textCoroutine);
             _textCoroutine = StartCoroutine(AdvanceText());
+        }
+
+        private void DialogueFinish()
+        {
+            CurrentString = "";
+            _targetString = "";
+            if (onDialogueFinish != null) {
+                onDialogueFinish();
+                onDialogueFinish = null;
+            }
         }
     }
 }

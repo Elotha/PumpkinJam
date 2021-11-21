@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Shadowself.Core.ToolBox
+namespace Core.ToolBox
 {
     public static class TransformUtils
     {

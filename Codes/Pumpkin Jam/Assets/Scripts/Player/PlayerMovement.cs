@@ -1,9 +1,10 @@
 ﻿using System;
+using Core.ToolBox;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : Singleton<PlayerMovement>
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private float jumpHeight = 1f;
@@ -16,7 +17,7 @@ namespace Player
         private CharacterController _controller;
         private Vector3 _velocity;
         private Transform _groundChecker;
-        public bool _isGrounded;
+        private bool _isGrounded;
 
         private void Start()
         {

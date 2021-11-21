@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Core
+namespace Core.ToolBox
 {
     [DisallowMultipleComponent]
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour

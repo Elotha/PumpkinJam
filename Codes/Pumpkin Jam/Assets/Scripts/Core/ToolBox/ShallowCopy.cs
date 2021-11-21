@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Shadowself.Core.ToolBox
+namespace Core.ToolBox
 {
     public static class ShallowCopy
     {

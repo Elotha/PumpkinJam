@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Shadowself.Core.ToolBox
+namespace Core.ToolBox
 {
     // Bu class listeleri referanslamadan kopyalamaya yarıyor. Ancak şu anda kullanımda değil.
     // Belki daha sonra lazım olur diye tutuyorum.
