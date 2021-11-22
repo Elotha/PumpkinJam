@@ -5,7 +5,7 @@ namespace Dialogues
 {
     public class QuestionOption : Interactable
     {
-        [SerializeField] private Dialogue dialogue;
+        [SerializeField] protected Dialogue dialogue;
         public override void Interact()
         {
             DialogueManager.I.NewDialogue(dialogue);
@@ -14,7 +14,7 @@ namespace Dialogues
             base.Interact();
         }
 
-        private void ActivateLayer()
+        protected void ActivateLayer()
         {
             gameObject.layer = LayerMask.NameToLayer("Interactable");
         }

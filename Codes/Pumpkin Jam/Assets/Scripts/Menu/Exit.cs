@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEngine;
 
 namespace Menu
 {
@@ -7,11 +8,11 @@ namespace Menu
         public override void Interact()
         {
             // Exit Game
-#if UNITY_EDITOR
-                EditorApplication.isPlaying = false;
-#else
+// #if UNITY_EDITOR
+                // EditorApplication.isPlaying = false;
+// #else
                 Application.Quit();
-#endif
+// #endif
         }
     }
 }

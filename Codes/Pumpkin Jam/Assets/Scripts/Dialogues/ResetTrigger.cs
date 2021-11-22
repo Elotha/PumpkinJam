@@ -21,6 +21,7 @@ namespace Dialogues
 
         private static void TeleportPlayer()
         {
+            Debug.Log("teleport");
             var transform1 = PlayerMovement.I.transform;
             transform1.position = PlayerMovement.startPoint;
             transform1.localRotation = PlayerMovement.startRotation;
